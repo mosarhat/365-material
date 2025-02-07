@@ -11,7 +11,7 @@ The following are the test topics:
 
 So, for this repository, I [learned](https://stackoverflow.com/questions/42871542/how-can-i-create-a-git-repository-with-the-default-branch-name-other-than-maste) how to initialize a GitHub repository without using GitHub itself. 
 
-I will create a GitHub repository with a **master** branch of my choice. This can be anything, but for the sake of consistency, I've decided to use ```main```. If we just use ```git init```, before the following command, we cannot change the branch name without deleting the default ```master``` branch.
+I will create a GitHub repository with a **master** branch of my choice. This can be anything, but for the sake of consistency, I've decided to use ```main```.
 
 Either command will suffice:
 
@@ -29,5 +29,25 @@ git init
 git checkout -b main
 ```
 
+If we just use ```git init```, before the following command, we can change the branch name using the following command:
 
+```bash
+git branch -m main
+```
+
+Now we need to create a GitHub repository. We are going to name this ```365-material```. We need to take our link generated, and use the following command:
+
+```bash
+git remote add origin https://github.com/mosarhat/365-material.git
+```
+
+From here, we need to push using the following command. From this command onwards, we can omit the ```-u```. ```--set-upstream``` is equivalent to ```-u```. The following are two types of commands we can use:
+
+```bash
+git push --set-upstream origin main
+```
+
+```bash
+git push -u origin main
+```
 
