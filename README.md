@@ -51,3 +51,18 @@ git push --set-upstream origin main
 git push -u origin main
 ```
 
+To remove a changed file (name or removed), we can use the following commands.
+
+1. First we must check if the file is still being tracked. The removed file should show up in red.
+
+```bash
+git status
+```
+
+2. *Stage* the deletion of the file.
+
+```bash
+git rm README..md
+```
+
+If the file is untracked, i.e. does not show up with ```git status```, just remove it from the directory manually.
