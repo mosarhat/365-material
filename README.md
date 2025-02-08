@@ -66,3 +66,24 @@ git rm README..md
 ```
 
 If the file is untracked, i.e. does not show up with ```git status```, just remove it from the directory manually.
+
+Suppose I am in the wrong branch, and I make a push, and only commit. There are two ways to approach fixing this issue:
+
+1. We use ```--soft``` to undo the commit command, BUT, this keeps our work, and removes the commit from ```git status```. Just to note, ```HEAD~1``` represents means the commit before head. If I want to remove a commit that is twice removed from ```HEAD```, I'd use ```HEAD~1```.
+
+```bash
+git reset --soft HEAD~1
+```
+
+2. We use ```--hard``` to undo the commit command. This will also remove all the work done within the file. Essentially, this will ```git reset --hard``` and ```git reset --soft HEAD~1```.
+
+```bash
+git reset --hard HEAD~1
+```
+
+Now, if this has already been pushed, the following command will work.
+
+```bash
+git push origin HEAD --force
+```
+
